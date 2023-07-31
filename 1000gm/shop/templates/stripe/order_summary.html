@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block seo %}
+    
+{% endblock seo %}
+    
+
+{% block css %}
+    
+{% endblock css %}
+    
+{% load static %}
+
+
+{% block body %}
+     <!-- Start checkout page area -->
+    <section class="mt-5 mb-5">
+        <div class="row text-center">
+            <div class="col-4">
+
+            </div>
+            <div class="col-4">
+               <div class="cards" >
+                <img src="https://cdn-icons-png.flaticon.com/512/148/148767.png" style="height:120px" alt=""> <br>
+                <h4 class="title mt-3 mb-3" style="font-size: 20px;font-weight: 700;">Order Placed Successfully</h4>
+                <a class="btn btn-success" href="{% url 'home:home' %}" >Back To Home</a>
+                <a class="btn btn-outline-success" href="{% url 'shop:dashboard' %}">Dashboard</a>
+
+               </div>
+            </div>
+        </div>
+    </section>
+    <!-- End checkout page area -->
+{% endblock body %}
+
+
+{% block js %}
+{% endblock js %}
+    
+    

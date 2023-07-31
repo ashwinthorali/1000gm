@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block seo %}
+    
+{% endblock seo %}
+    
+
+
+{% block body %}
+<!-- Banner Area -->
+<div class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{% url 'home:home' %}" itemprop="item">
+            <span itemprop="name" class="sr-only">Home</span>
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+       
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="#" itemprop="item" aria-current="page">
+              <span itemprop="name">Ways you can help</span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+      </ol>
+    </nav>
+  </div>
+<!-- About Area -->
+
+<!-- volunteer Area -->
+<section id="volunteer_area" class="pb-2 pt-2 bg-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="section_heading">
+                    <div class="section_heading">
+                        <!-- <h3> </h3> -->
+                        <h2> Here are ways you can help
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="" class="section_padding_bottom pt-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="container">
+                    <div class="about_area_para mt-4">
+                        
+                        <h5>
+                            Here are the benefits of contributing to 1000 GM for your kids’ chess journey:
+
+
+                        </h5>
+                        <p>
+                            <ul>
+                                <li>
+                                    • Share our YouTube Channel with others.
+                                    
+                                </li>
+                                <li>
+                                    • Buy 1000 GM sets for your co-workers who play chess.
+
+                                </li>
+                                <li>
+                                    • Reach out to us for Corporate Social Responsibility or sponsorships.
+
+                                </li>
+                                <li>
+                                    • Let us know about any grants we can apply for.
+
+                                </li>
+                                <li>
+                                    • Donate your time as a master player in our tournaments.
+
+                                </li>
+                                <li>
+                                    • Take advantage of our summer tournament (20% OFF).
+
+                                </li>
+                                <li>
+                                    • Bay Area Tournaments are now $ 1000/weekend, and IM Norm Schiller events are $650 during the sale.
+                                </li>
+                                <li>
+                                    • Summer Tournaments available on weekdays and weekends.
+
+                                </li>
+                                <li>
+                                    • We welcome any other ideas you may have.
+
+                                </li>
+                            </ul>
+                        </p>
+
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="about_area_img mt-4">
+                    <img src="{% static 'a6.png' %}" style="border-radius: 4px;" alt="img">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock  %}
+    

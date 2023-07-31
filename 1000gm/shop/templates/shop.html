@@ -1,0 +1,314 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block seo %}
+    
+{% endblock seo %}
+    
+
+
+{% block body %}
+        <!-- Banner Area -->
+        <div class="container">
+            <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a href="{% url 'home:home' %}" itemprop="item">
+                    <span itemprop="name" class="sr-only">Home</span>
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                </a>
+                <meta itemprop="position" content="1" />
+                </li>
+            
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="#" itemprop="item" aria-current="page">
+                    <span itemprop="name">Merchandise</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+            </nav>
+        </div>
+
+    
+        
+        <!-- Trending causes Area -->
+        <section id="trending_causes_main" class="section_padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                        <div class="section_heading">
+                            <!-- <h3>Our Merchandise</h3> -->
+                            <h2> Latest <span class="color_big_heading">Products</span> </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="counter">
+                    
+                   
+                   {% for ie in data %}
+                   <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                    <div class="case_boxed_wrapper">
+                        <div class="case_boxed_img">
+                            <a href="{% url 'shop:shopd' ie.slug %}"><img src="{{ie.image.url}}" alt="img"></a>
+                        </div>
+                        <div class="causes_boxed_text">
+                            <h3><a href="{% url 'shop:shopd' ie.slug %}">
+                                {{ie.product_name}}
+                            </a></h3>
+                            <p>
+                                {{ie.short_desc}}
+                            </p>
+                            
+                            <div class="causes_boxed_bottom_wrapper">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                        <div class="casuses_bottom_boxed">
+                                            <span>
+                                                <b>Price:</b>
+                                            </span>
+                                            
+                                            {% if ie.mrp %}
+                                            <span class="mrp ml-2">
+                                                {{ie.mrp}} 
+                                            </span>
+                                            {% endif %}
+                                                
+                                            <span class="sp pl-2">
+                                                {{ie.sp}} $
+                                            </span>
+
+                                         
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                        <div class="casuses_bottom_boxed casuses_left_padding">
+                                            <a href="{% url 'shop:shopd' ie.slug %}" class="">
+                                                <i class="fa fa-eye"> </i>
+                                            </a>    
+                                            &nbsp;  
+                                            &nbsp;
+                                            
+                                           {% if ie.cartitem %}
+                                           <div id="pp">
+                                                <div class="number d-flex" style="width: 120px;" >
+                                                    <span data-id="{{ie.id}}" class="minus">-</span>
+                                                    <input type="text" name="qty" value="{{ie.cartitemID}}" disabled/>
+                                                    <span data-id="{{ie.id}}" class="plus">+</span>
+                                                </div>
+                                           </div>
+                                           {% else %}
+                                               <div id="pp">
+                                                    {% if user.is_authenticated %}
+                                                    <a href="javascript:void(0);" class="addToCart d-flex" data-id="{{ie.id}}">
+                                                        <div class="casuses_bottom_icon">
+                                                            <i class="fa fa-shopping-cart text-success"></i>
+                                                        </div>
+                                                        <div class="casuses_bottom_content">
+                                                            Add To Cart
+                                                        </div>
+                                                        
+                                                    </a> 
+                                                    {% else %}
+                                                    <a href="javascript:void(0);" class="d-flex" data-toggle="modal" data-target="#loginModal">
+                                                        <div class="casuses_bottom_icon">
+                                                            <i class="fa fa-shopping-cart text-success"></i>
+                                                        </div>
+                                                        <div class="casuses_bottom_content">
+                                                            Add To Cart
+                                                        </div>
+                                                        
+                                                    </a>
+                                                    {% endif %}
+                                               </div>
+
+                                           {% endif %}
+                                            
+                                            
+                                                
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   {% endfor %}
+                    
+                
+                
+                </div>
+            </div>
+        </section>
+{% endblock body %}
+    
+
+
+{% block js %}
+<script type="text/javascript">
+    $(document).on('click', '.addToCart', function (e) {
+        e.preventDefault();
+        name = $(this).data('id');
+        url_pattern = "/shop/add-to-cart/";
+        $.ajax({
+            type: "GET",
+            url: url_pattern,
+            data:{
+                'name':name
+            },
+            success: function (response) {
+
+
+                product_id = response.idd;
+                qty = response.qty;
+                $('#pp').empty();
+                $('#pp').append(
+                    `
+                    <div class="number d-flex" style="width: 120px;" >
+                        <span data-id="${product_id}" class="minus">-</span>
+                        <input type="text" name="qty" value="1" disabled/>
+                        <span data-id="${product_id}" class="plus">+</span>
+                    </div>
+                    `
+                );
+                
+                
+                   
+            },
+            error:function (data) {
+                console.log('An error occurred.');
+                
+            },
+        
+        });
+        $(this).removeData();
+    });
+  </script>
+
+
+<script type="text/javascript">
+    $(document).on('click', '.minus', function (e) {
+       e.preventDefault();
+       name = $(this).data('id');
+       url_pattern = "/shop/minus/";
+       $.ajax({
+           type: "GET",
+           url: url_pattern,
+           data:{
+               'name':name
+           },
+           success: function (response) {
+
+
+               product_id = response.idd;
+               qty = response.data;
+               if (qty == 0){
+                   $('#pp').empty();
+                   $('#pp').append(
+                    `
+                    <a href="javascript:void(0);" class="addToCart d-flex" data-id="${product_id}">
+                        <div class="casuses_bottom_icon">
+                            <i class="fa fa-shopping-cart text-success"></i>
+                        </div>
+                        <div class="casuses_bottom_content">
+                            Add To Cart
+                        </div>
+                        
+                    </a> 
+                    `
+                );
+               }
+               else{
+                $('#pp').empty();
+                $('#pp').append(
+                    `
+                    <div class="number d-flex" style="width: 120px;" >
+                        <span data-id="${product_id}" class="minus">-</span>
+                        <input type="text" name="qty" value="${qty}" disabled/>
+                        <span data-id="${product_id}" class="plus">+</span>
+                    </div>
+                    `
+                );
+                
+               }
+
+               
+               
+                  
+           },
+           error:function (data) {
+               console.log('An error occurred.');
+               
+           },
+       
+       });
+       $(this).removeData();
+   });
+ </script>
+
+
+<script type="text/javascript">
+    $(document).on('click', '.plus', function (e) {
+       e.preventDefault();
+       name = $(this).data('id');
+       url_pattern = "/shop/plus/";
+       $.ajax({
+           type: "GET",
+           url: url_pattern,
+           data:{
+               'name':name
+           },
+           success: function (response) {
+
+
+               product_id = response.idd;
+               qty = response.data;
+               if (qty == 0){
+                   $('#pp').empty();
+                   $('#pp').append(
+                    `
+                    <a href="javascript:void(0);" class="addToCart d-flex" data-id="${product_id}">
+                        <div class="casuses_bottom_icon">
+                            <i class="fa fa-shopping-cart text-success"></i>
+                        </div>
+                        <div class="casuses_bottom_content">
+                            Add To Cart
+                        </div>
+                        
+                    </a> 
+                    `
+                );
+               }
+               else{
+                $('#pp').empty();
+                $('#pp').append(
+                    `
+                    <div class="number d-flex" style="width: 120px;" >
+                        <span data-id="${product_id}" class="minus">-</span>
+                        <input type="text" name="qty" value="${qty}" disabled/>
+                        <span data-id="${product_id}" class="plus">+</span>
+                    </div>
+                    `
+                );
+                
+               }
+
+               
+               
+                  
+           },
+           error:function (data) {
+               console.log('An error occurred.');
+               
+           },
+       
+       });
+       $(this).removeData();
+   });
+ </script>
+
+
+{% endblock  %}
+    

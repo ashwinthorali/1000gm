@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block seo %}
+    
+{% endblock seo %}
+    
+
+
+{% block body %}
+       <!-- Banner Area -->
+       <section id="common_banner_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="commn_banner_page">
+                        <h2>{{data.h1}}</h2>
+                        <ul class="breadcrumb_wrapper">
+                            <li class="breadcrumb_item"><a href="{% url 'home:home' %}">Home</a></li>
+                            <li class="breadcrumb_item"><img src="{% static 'files/img/icon/arrow.png' %}" alt="img"></li>
+                            <li class="breadcrumb_item active">Events</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- causes details Area -->
+     <section id="trending_causes_main" class="section_padding">
+        <div class="container">
+            <div class="row" id="counter">
+                <div class="col-lg-8">
+                    <div class="details_wrapper_area">
+                        <div class="details_big_img">
+                            <img src="{{data.image.url}}" alt="img">
+                        </div>
+                        
+                        <div class="details_text_wrapper">
+                            {{data.content|safe}}
+                        </div>
+                        <div class="comment_form_area">
+                            <h3>Leave a comment</h3>
+                            <div class="comment_form">
+                                <form action="#!" id="comment_form">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Enter full name"
+                                                    required />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter email address" required />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <textarea rows="5" placeholder="Write your comments"
+                                                    class="form-control" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="submit_btn">
+                                                <button class="btn btn_theme btn_md">Submit comment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar_first">
+                        <!-- Project Organizer -->
+                        <div class="project_organizer_wrapper sidebar_boxed">
+                            <div class="project_organizer_img">
+                                <img src="{{data.author.image.url}}" style="height:30px;" alt="img" />
+                            </div>
+                            <div class="project_organizer_text">
+                                <h5>Author:</h5>
+                                <h3>{{data.author}}</h3>
+                                <p>{{data.author.position}}</p>
+                            </div>
+                        </div>
+                        <!-- Recent Causes -->
+                        <div class="recent_causes_wrapper sidebar_boxed">
+                            <div class="sidebar_heading_main">
+                                <h3>Recent Blogs</h3>
+                            </div>
+                            
+                            {% for ie in rp %}
+                                
+                            <div class="recent_donet_item">
+                                <div class="recent_donet_img">
+                                    <a href="{% url 'home:blogs_detail' ie.slug %}"><img src="{{ie.image.url}}"
+                                            alt="img"></a>
+                                </div>
+                                <div class="recent_donet_text">
+                                    <div class="sidebar_inner_heading">
+                                        <h4><a href="cause-details.html">
+                                            {{ie.h1}}
+                                        </a></h4>
+                                    </div>
+                                    <h6>{{ie.published}}</h6>
+                                </div>
+                            </div>
+                            {% endfor %}
+                                
+                        </div>
+                        <!-- share Causes -->
+                        <div class="share_causes_wrapper sidebar_boxed">
+                            <div class="sidebar_heading_main">
+                                <h3>Share Blog</h3>
+                            </div>
+                            <div class="social_icon_sidebar">
+                                <ul>
+                                    <li><a href="#!"><img src="{% static 'files/img/icon/facebook.png' %}" alt="icon"></a></li>
+                                    <li><a href="#!"><img src="{% static 'files/img/icon/instagram.png' %}" alt="icon"></a></li>
+                                    <li><a href="#!"><img src="{% static 'files/img/icon/twitter.png' %}" alt="icon"></a></li>
+                                    <li><a href="#!"><img src="{% static 'files/img/icon/linkedin.png' %}" alt="icon"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock  %}
+    

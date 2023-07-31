@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block seo %}
+    
+{% endblock seo %}
+    
+
+
+{% block body %}
+<!-- Banner Area -->
+<div class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{% url 'home:home' %}" itemprop="item">
+            <span itemprop="name" class="sr-only">Home</span>
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+       
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="#" itemprop="item" aria-current="page">
+              <span itemprop="name">For IM's</span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+      </ol>
+    </nav>
+  </div>
+<!-- About Area -->
+
+<!-- volunteer Area -->
+<section id="volunteer_area" class="pb-2 pt-2 bg-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="section_heading">
+                    <div class="section_heading">
+                        <!-- <h3> </h3> -->
+                        <h2> For IM's</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="" class="section_padding_bottom pt-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="container">
+                    <div class="about_area_para text-center">
+                        
+                        <p>
+                            Playing good chess in tournaments should be rewarding. We offer appealing conditions for IM Norm and Scheveningen Challenger tournaments, which can provide full time employment with 4 events per month. We’ve already provided more than 20 IMs with playing conditions in out tournaments.
+
+
+                        </p>
+                        <p>
+                            The path to achieving a GM title requires a high FIDE rating and participating in GM Norm Tournaments. We attract foreign players with high ratings through Super-Swiss and Scheveningen Challenger Tournaments, as well as traditional Round Robin and Schiller Style Norm Tournaments. Our GM Round Robin events are free for IMs to participate. We have organized nine GM Round Robin events in various locations, and are currently organizing the third Super-Swiss tournament in Los Angeles with more scheduled in 2023 in Los Angeles, Las Vegas, and The Bay Area.
+
+
+                        </p>
+                        <p>
+                            Serious chess players compete in 30 strong tournaments annually, our Scheveningen Challenger tournament bring higher rated players to your city by unlocking regular weekends and reducing travel. We have successfully organized # such tournaments in the Bay Area with over 15 participants. Additionally, talented kids can achieve draws.
+
+
+                        </p>
+                        <p>
+                            Talented kids have the potential to draw or defeat300+ higher rated players. Our Scheveningen Challenger Tournaments frequently showcase kids surprising us wuth their performance against higher-rated players. Once they win their first game against a grandmaster, they break their mental barrier and can continue to perform well. Providing opportunities and preparing well against much higher-rated opponents is the key to their success.
+
+
+
+                        </p>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock  %}
+    

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block seo %}
+    
+{% endblock seo %}
+    
+
+
+{% block body %}
+      <!-- Banner Area -->
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+          <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="{% url 'home:home' %}" itemprop="item">
+                <span itemprop="name" class="sr-only">Home</span>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </a>
+              <meta itemprop="position" content="1" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="#" itemprop="item" aria-current="page">
+                <span itemprop="name">Events</span>
+              </a>
+              <meta itemprop="position" content="2" />
+            </li>
+          </ol>
+        </nav>
+      </div>
+
+    <!-- Upcoming Events Area -->
+    <section id="upcoming_events" class="section_padding pt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="section_heading">
+                        <h3>Upcoming events</h3>
+                        <h2>Are you ready to be the next <span class="color_big_heading">Grandmaster</span>?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        
+                        {% for ie in event %}
+                        <div class="col-md-6">
+                            <div class="event_left_side_wrapper">
+                                <div class="event_content_area small_content_padding">
+                                    
+                                    {% if ie.keyword %}
+                                    <div class="event_tag_area">
+                                        <a href="">#{{ie.keyword}}</a>
+                                    </div>
+                                    {% endif %}
+                                        
+                                    <div class="event_heading_area">
+                                        <div class="event_heading">
+                                            <h3><a href="{% url 'home:events_detail' ie.slug %}">{{ie.h1}}</a></h3>
+                                        </div>
+                                        <div class="event_date">
+                                            <img src="{% static 'files/img/icon/date.png' %}" alt="icon">
+                                            <h6>{{ie.banner_day}} <span>{{ie.banner_month}}</span></h6>
+                                        </div>
+                                    </div>
+                                    <div class="event_para">
+                                        <p>{{ie.description}}</p>
+                                    </div>
+                                    <div class="event_boxed_bottom_wrapper">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                <div class="event_bottom_boxed">
+                                                    <div class="event_bottom_icon">
+                                                        <img src="{% static 'files/img/icon/map.png' %}" alt="icon">
+                                                    </div>
+                                                    <div class="event_bottom_content">
+                                                        <h5>Location:</h5>
+                                                        <p>{{ie.location1}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                                <div class="event_bottom_boxed">
+                                                    <div class="event_bottom_icon">
+                                                        <img src="{% static 'files/img/icon/clock.png' %}" alt="icon">
+                                                    </div>
+                                                    <div class="event_bottom_content">
+                                                        <h5>Starts From:</h5>
+                                                        <p>{{ie.date}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                            
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock  %}
+    

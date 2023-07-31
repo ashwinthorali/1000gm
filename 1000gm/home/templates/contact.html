@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block seo %}
+    
+{% endblock seo %}
+    
+
+
+{% block body %}
+    <!-- Banner Area -->
+    <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+          <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="{% url 'home:home' %}" itemprop="item">
+                <span itemprop="name" class="sr-only">Home</span>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </a>
+              <meta itemprop="position" content="1" />
+            </li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="{% url 'home:contact' %}" itemprop="item" aria-current="page">
+                <span itemprop="name">Contact Us</span>
+              </a>
+              <meta itemprop="position" content="2" />
+            </li>
+          </ol>
+        </nav>
+      </div>
+    <!-- Contact Area -->
+    <section id="contact_arae_main" class="section_padding pt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="section_heading">
+                        <h3>Contact with us</h3>
+                        <h2>Stay connected 
+                            <span class="color_big_heading">with us and </span>
+                            stay updated by getting in touch.
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact_area_left">
+                        <div class="contact_left_item">
+                            <div class="contact_left_icon">
+                                <img src="{% static 'files/img/icon/map_color.png' %}" alt="icon">
+                            </div>
+                            <div class="contact_left_text">
+                                <h3>Address:</h3>
+                                <p> Los Angeles, CA 90024 <br /> United States of America</p>
+                            </div>
+                        </div>
+                        <div class="contact_left_item">
+                            <div class="contact_left_icon">
+                                <img src="{% static 'files/img/icon/email-color.png' %}" alt="icon">
+                            </div>
+                            <div class="contact_left_text">
+                                <h3>Email:</h3>
+                                <a href="mailto:support@1000gm.org">support@1000gm.org</a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact_form_Wrapper">
+                        <h3>Leave us a message</h3>
+                        <form action="" method="POST" id="contact_form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" placeholder="Your full name*" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control"  name="email" placeholder="Your email address*" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" placeholder="Subject**" required />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="6" name="message" placeholder="Message*" required></textarea>
+                            </div>
+                            <div class="contact_submit_form">
+                                <button class="btn btn_theme btn_md">Send message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Map Area -->
+    <!-- <section id="contact_full_map" class="section_padding_bottom">
+        <div class="contact_content_boxed">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="about_top_boxed bg_one">
+                            <div class="about_top_boxed_icon">
+                                <img src="{% static 'files/img/icon/msg.png' %}" alt="img">
+                            </div>
+                            <div class="about_top_boxed_text">
+                                <p>Chat with live</p>
+                                <h3>Chat with our <br /> live experts</h3>
+                                <a href="contact.html">Chat now</a>
+                            </div>
+                            <div class="about_top_boxed_vector">
+                                <img src="{% static 'files/img/icon/round.png' %}" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="about_top_boxed bg_two">
+                            <div class="about_top_boxed_icon">
+                                <img src="{% static 'files/img/icon/hand-round.png' %}" alt="img">
+                            </div>
+                            <div class="about_top_boxed_text">
+                                <p>Become a partner</p>
+                                <h3>Enhance your helping hand for peoples</h3>
+                                <a href="make-donation.html">Join now</a>
+                            </div>
+                            <div class="about_top_boxed_vector">
+                                <img src="files/img/icon/round.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="about_top_boxed bg_three">
+                            <div class="about_top_boxed_icon">
+                                <img src="{% static 'files/img/icon/qa.png' %}" alt="img">
+                            </div>
+                            <div class="about_top_boxed_text">
+                                <p>Ask your questin</p>
+                                <h3>Ask your any question and get updates</h3>
+                                <a href="contact.html">Ask now</a>
+                            </div>
+                            <div class="about_top_boxed_vector">
+                                <img src="{% static 'files/img/icon/round.png' %}" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact_map_area">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.6962663570607!2d89.
+                            56355961427838!3d22.813715829827952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s
+                            0x39ff901efac79b59%3A0x5be01a1bc0dc7eba!2sAnd+IT!5e0!3m2!1sen!2s
+                            bd!4v1557901943656!5m2!1sen!2sbd" height="550" style="border:0;width: 100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock  %}
+    

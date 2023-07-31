@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block seo %}
+    
+{% endblock seo %}
+    
+
+
+{% block body %}
+<!-- Banner Area -->
+<div class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{% url 'home:home' %}" itemprop="item">
+            <span itemprop="name" class="sr-only">Home</span>
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+       
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="#" itemprop="item" aria-current="page">
+              <span itemprop="name">About 1000 GM</span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+      </ol>
+    </nav>
+  </div>
+
+<!-- About Area -->
+
+<!-- volunteer Area -->
+<section id="volunteer_area" class="pb-5 pt-5 bg-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="section_heading">
+                    <div class="section_heading">
+                        <h3>Our Mission</h3>
+                        <h2> “<span class="color_big_heading">Unlock your potential</span>  and reach the highest level of mastery in Chess”</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="" class="section_padding_bottom pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="about_area_img">
+                    <img src="{% static 'about1.png' %}" style="border-radius: 4px;" alt="img">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="about_area_main_text">
+                    <div class="about_area_heading_two">
+                       <h3>Our Goal is to</h3>
+                        <h2>
+                             <span class="color_big_heading">Empower and Inspire Children</span> 
+                             </h2>
+                    </div>
+                    <div class="about_area_para">
+                        <h5>To follow their passions by providing them
+                            with the resources, opportunity, and support they need to pursue their dreams.</h5>
+                       <p>
+                        Through our programs and initiatives, we aim to create a nurturing environment that
+                        encourages creativity, innovation, and personal growth.
+
+
+                       </p>
+                       <p>
+                        Our ultimate goal is to enable children to become self-motivating, confident, and
+                        successful chess individuals who are able to make a positive impact in their communities
+                        and the world.
+
+                       </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="" class=" section_padding bg-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="section_heading">
+                    <h2> Embark on a journey towards becoming 
+
+                        <span class="color_big_heading">a Grandmaster!</span> </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="about_area_main_text">
+                    <div class="about_area_heading_two">
+                       <h3>Let’s Create</h3>
+                        <h2>
+                             <span class="color_big_heading"> Future Grandmasters</span> 
+                             </h2>
+                    </div>
+                    <div class="about_area_para">
+                        <h5>
+                            We are confident that a combination of great talent and participating in 30
+                            tournaments annually can lead to achieving the title of grandmaster before
+                            entering college.</h5>
+                       <p>
+                        Our optimal approach is to collaborate with parents in organizing events in their
+                         local city, thereby creating a path towards achieving this goal.
+
+                       </p>
+                      
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="about_area_img">
+                    <img src="{% static 'a2.png' %}" style="border-radius: 4px;" alt="img">
+                </div>
+            </div>
+            
+        </div>
+       
+    </div>
+</section>
+ <section id="about_top_area" class="section_padding">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6 mb-2">
+
+                    <div class="card card-cts p-4">
+                        <a href="{% url 'home:nms' %}">
+                            
+                            <h2 class="text-white">
+                                For NM's & FM's
+                            </h2>
+                            
+                        </a>
+                    </div>
+                   
+                </div>
+                <div class="col-md-6 mb-2">
+
+                    <div class="card card-cts p-4">
+                       <a href="{% url 'home:ims' %}">
+                            <h2 class="text-white">
+                                For IM's
+                            </h2>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6 mb-2">
+
+                    <div class="card card-cts p-4">
+                        <a href="{% url 'home:gms' %}">
+                            <h2 class="text-white">
+                                For GM's
+                            </h2>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="col-md-6 mb-2">
+
+                    <div class="card card-cts p-4">
+                        <a href="{% url 'home:parent' %}">
+                            <h2 class="text-white">
+                                For Parents
+                            </h2>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- volunteer Area -->
+<section id="volunteer_area" class="section_after section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="section_heading">
+                    <h3>1000GM Team</h3>
+                    <h2>Introducing the Masterminds behind 
+                    <span class="color_big_heading">1000 gm</span> </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+           
+            
+            {% for ie in data %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="volunteer_wrapper">
+                    <div class="volunteer_img">
+                        <img src="{{ie.image.url}}" alt="img">
+                        <!-- <div class="volunteer_icon">
+                            <ul>
+                                <li>
+                                    <a href="#!"><i class="fab fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#!"><i class="fab fa-twitter-square"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#!"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#!"><i class="fab fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div> -->
+                    </div>
+
+                    <div class="volunteer_text">
+                        <h3><a href="#!">{{ie.name}}</a></h3>
+                        <p>{{ie.position}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+                
+            
+           
+        </div>
+       
+    </div>
+</section>
+<section class="mb-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="text-center">
+                <a href="{% url 'home:team' %}" class="btn btn-secondary">View All</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Partner Area -->
+<!-- <section id="partner_area-2" class="section_padding_bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="partner_slider_wrapper owl-theme owl-carousel">
+                    <div class="partner_logo">
+                        <a href="#!"><img src="{% static 'files/img/partner/logo-1.png' %}" alt="img"></a>
+                    </div>
+                    <div class="partner_logo">
+                        <a href="#!"><img src="{% static 'files/img/partner/logo-2.png' %}" alt="img"></a>
+                    </div>
+                    <div class="partner_logo">
+                        <a href="#!"><img src="{% static 'files/img/partner/logo-3.png' %}" alt="img"></a>
+                    </div>
+                    <div class="partner_logo">
+                        <a href="#!"><img src="{% static 'files/img/partner/logo-4.png' %}" alt="img"></a>
+                    </div>
+                    <div class="partner_logo">
+                        <a href="#!"><img src="{% static 'files/img/partner/logo-5.png' %}" alt="img"></a>
+                    </div>
+                    <div class="partner_logo">
+                        <a href="#!"><img src="{% static 'files/img/partner/logo-6.png' %}" alt="img"></a>
+                    </div>
+                    <div class="partner_logo">
+                        <a href="#!"><img src="{% static 'files/img/partner/logo-7.png' %}" alt="img"></a>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section> -->
+
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock  %}
+    

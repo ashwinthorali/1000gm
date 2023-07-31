@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block seo %}
+    
+{% endblock seo %}
+    
+
+
+{% block body %}
+
+<section style="padding:10px">
+
+    <div class="container">
+        <div class="row">
+            {% include 'pc.html' %}
+            <!-- //events -->
+
+            {% include 'mobile.html' %}
+        </div>
+    </div>   
+</section>
+
+
+
+    <!-- Counter  Area -->
+    <section id="counter_area" class=" mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="counter_area_wrapper">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="counter_item text-center">
+                                    <img src="{% static 'files/img/icon/camp2.png' %}" alt="icon">
+                                    <span style='display: flex;justify-content: center;'>
+                                        <h2 class="counter">40+</h2>
+                                    </span>
+                                    <p> Events Organized </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="counter_item">
+                                    <img src="{% static 'files/img/icon/hand.png' %}" alt="icon">
+                                    <span style='display: flex;justify-content: center;'>
+                                    <h2 class="counter">25+</h2>
+                                    </span>
+                                    <p>Norm Seekers</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="counter_item">
+                                    <img src="{% static 'files/img/icon/mone.png' %}" alt="icon">
+                                    <span style='display: flex;justify-content: center;'>
+                                        <h2>$</h2><h2 class="counter">450000+</h2>
+                                    </span>
+                                    <p>Spent In Events</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                <div class="counter_item">
+                                    <img src="{% static 'files/img/icon/camp.png' %}" alt="icon">
+                                    <span style='display: flex;justify-content: center;'>
+                                    <h2 class="counter">459+</h2>
+                                    </span>
+                                    <p>Players benifited</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+       <!-- Donate Area -->
+       <section id="donate_area" class="gmgr">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="donate_text">
+                        <h2>The United States of Chess
+                        </h2>
+                        <h3>
+                            The FIRST documentary to capture the chess ecosystem in the U.S. from Parent to Prodigy To Pro
+                        </h3>
+                        <a href="https://www.indiegogo.com/projects/the-united-states-of-chess#/" class="btn btn_md btn_theme">
+                            <i class="ri-hand-coin-line mb-2"></i>  
+                            <span class="pos">
+                                Donate now
+                            </span>
+                        </a>
+                        
+                        <a href="{% static 'chess.pdf' %}" target="_blank" class="btn btn_md btn_theme">
+                            <i class="ri-file-pdf-line mb-2"></i>  
+                            <span class="pos">
+                                Download PDF
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Area -->
+    <section id="home_blog_area" class="section_after bg-color">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="section_heading">
+                        <h3>Our latest updates</h3>
+                        <h2>Check all
+                            <span class="color_big_heading">our latest</span> blogs
+                            and updates
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for ie in blogs %}
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                 <div class="case_boxed_wrapper">
+                     <div class="case_boxed_img">
+                         <a href="{% url 'home:blogs_detail' ie.slug %}"><img src="{{ie.image.url}}" alt="img"></a>
+                     </div>
+                     <div class="causes_boxed_text">
+                         <h3><a href="{% url 'home:blogs_detail' ie.slug %}">
+                             {{ie.h1}}
+                         </a></h3>
+                         <p>
+                             {{ie.description}}
+                         </p>
+                         <div class="causes_boxed_bottom_wrapper">
+                             <div class="row">
+                                 <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                     <div class="casuses_bottom_boxed">
+                                         <div class="casuses_bottom_icon">
+                                             <img src="{% static 'files/img/icon/cal.png' %}" alt="icon">
+                                         </div>
+                                         <div class="casuses_bottom_content">
+                                             <h5>Date:</h5>
+                                             <p>{{ie.published}}</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                     <div class="casuses_bottom_boxed casuses_left_padding">
+                                         <div class="casuses_bottom_icon">
+                                             <img src="{% static 'files/img/icon/user.png' %}" alt="icon">
+                                         </div>
+                                         <div class="casuses_bottom_content">
+                                             <h5>By:</h5>
+                                             <p>{{ie.author.name}}</p>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+                {% endfor %}
+                 
+             
+            </div>
+        </div>
+
+    </section>
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock  %}
+    

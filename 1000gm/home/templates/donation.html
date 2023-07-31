@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block seo %}
+    
+{% endblock seo %}
+    
+
+
+{% block body %}
+<!-- Banner Area -->
+<div class="container">
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{% url 'home:home' %}" itemprop="item">
+            <span itemprop="name" class="sr-only">Home</span>
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="item" aria-current="page">
+            <span itemprop="name">Donations</span>
+          </span>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </nav>
+  </div>
+<!-- About Area -->
+
+<!-- volunteer Area -->
+<section id="volunteer_area" class="pb-0 pt-2 bg-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="section_heading">
+                    <div class="section_heading">
+                        <!-- <h3> </h3> -->
+                        <h2> Donate today, inspire tomorrow.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="" class="section_padding_bottom pt-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="container">
+                    <div class="about_area_para text-center">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                    
+                                Thank you for considering donating to 1000GM Chess Charity, an organization dedicated to investing in infrastructure that creates and sustains 1000 grandmasters.
+
+                                </p>
+                                <p>
+                                    
+                                So far, we have funded 5 GM Norm Round-Robin, 6 IM Norm Round-Robin and 2 Super Swiss event in Los Angeles, Bay Area and St. Louis. We have more than 30 player profile interviews on YouTube and 500+ game-analysis videos by GM Akobina. (Many more on the way!). 100+ players had opportunity to participate in over 500 games. It has cost $300,000 to produce them. We have created 25+ Norms.
+                                
+                                </p>
+                                <p>
+                                    
+                                We are committed to producing more events in 2023. At the moment, we are really funded by direct donations from chess fans and corporate sponsorship.
+                                
+                                </p>
+                                <p>
+                                    
+                                Our 501c(3) is registered with Benevity and available for company match.
+                                
+                                </p>
+                                <p>
+                                    
+                                Any questions? We would love to hear from you: Email info@1000gm.org
+                                </p>
+
+                                <div class="col-12 mt-4 p-3">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="card p-5">
+                                                <a href="https://paypal.me/1000gm" class="btn btn-success" target="_blank">paypal.me/1000gm</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <img src="{% static 'donate.png' %}" alt="Donation" srcset="">
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock  %}
+    
