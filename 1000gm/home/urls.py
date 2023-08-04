@@ -28,9 +28,9 @@ urlpatterns = [
     path('coming-soon/', views.comingsoon, name='comingsoon'),
     path('our-team/', views.team, name='team'),
     
-    path('scoholastic/', views.scoholastic, name='scoholastic'),
+    path('chess-literacy/', views.scoholastic, name='scoholastic'),
     path('newsletter/', views.newsletter, name='newsletter'),
-    path('scoholastic_detail/<str:pk>/', views.scoholastic_detail, name='scoholastic_detail'),
+    path('chess-literacy-detail/<str:pk>/', views.scoholastic_detail, name='scoholastic_detail'),
     
     path('latest-videos/', views.latest_videos, name='latest_videos'),
     path('player-profile/', views.player_profile, name='player_profile'),
